@@ -56,6 +56,11 @@ button {
   -o-transition: var(--transition);
   transition: var(--transition);
 }
+button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 4px 0px #000;
+  transform: scale(1.1);
+}
 
 .main-container {
   display: flex;
@@ -111,6 +116,11 @@ button {
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #ffffff;
+}
+.chosen:hover {
+  cursor: inherit;
+  box-shadow: none;
+  transform: none;
 }
 
 .btn__reset {
