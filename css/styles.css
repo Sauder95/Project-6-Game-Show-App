@@ -55,13 +55,13 @@ button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+  transition: 0.4s ease-in-out;
 }
 button:hover {
+  transform: scale(1.2);
+  box-shadow: 1px 1px 5px black;
   cursor: pointer;
-  box-shadow: 1px 1px 4px 0px #000;
-  transform: scale(1.1);
 }
-
 .main-container {
   display: flex;
   flex-direction: column;
@@ -109,13 +109,13 @@ button:hover {
     transform: rotate(30deg);
   }
   80% {
-    transform: scale(1.2);
+    transform: scale(0.95);
   }
 }
 .show {
   color: #000;
   background-color: #76ce82;
-  animation: swing 1s ease-in-out;
+  animation: swing 1.5s ease-in-out;
 }
 
 /* Keyboard */
@@ -132,9 +132,9 @@ button:hover {
   color: #ffffff;
 }
 .chosen:hover {
+  transform: none;
   cursor: inherit;
   box-shadow: none;
-  transform: none;
 }
 
 .btn__reset {
@@ -143,11 +143,10 @@ button:hover {
   background: #ffffff;
   border-radius: 5px;
   font-size: var(--font-size-medium);
-  transition: 0.3s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 .btn__reset:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 5px #000;
   transform: scale(1.2);
 }
 
@@ -164,6 +163,7 @@ button:hover {
   left: 0;
   right: 0;
   border-radius: 5px;
+  z-index: 1;
 }
 
 .title {
