@@ -5,6 +5,10 @@ let phrase = document.querySelector("#phrase");
 let phraseUl = document.querySelector("#phrase ul");
 let tries = document.querySelectorAll(".tries img");
 let buttons = document.querySelectorAll("BUTTON");
+// ==================================================
+// +++++++++++++ ANIMATION VARS ++++++++++++++++
+
+let title = document.querySelector("#banner");
 
 // ==== WRONG ANSWERS ======
 
@@ -12,7 +16,19 @@ let missed = 0;
 
 // ====== PHRASES ARRAY ==========================
 
-phrases = ["deadpool", "wolverine", "spider man", "flash", "storm"];
+phrases = [
+  "deadpool",
+  "wolverine",
+  "spider man",
+  "flash",
+  "storm",
+  "ant man",
+  "super man",
+  "bat man",
+  "hulk",
+  "thor",
+  "iron man",
+];
 
 // ===== START GAME ============================
 
@@ -76,6 +92,7 @@ qwerty.addEventListener("click", (e) => {
     if (letterFound === null) {
       tries[missed].src = "images/lostHeart.png";
       missed++;
+      button.className = "wrong";
       checkWin();
     } else {
       checkWin();
@@ -116,8 +133,16 @@ function reset() {
     chosen[i].classList.remove("chosen");
     chosen[i].disabled = false;
   }
-
+  let wrong = document.querySelectorAll(".wrong");
+  for (let i = 0; i < wrong.length; i++) {
+    wrong[i].classList.remove("wrong");
+    wrong[i].disabled = false;
+  }
   for (let i = 0; i < tries.length; i++) {
     tries[i].src = "images/liveHeart.png";
   }
 }
+
+// ===================================================================================
+// +++++++++++++++++++++ ANIMATIONS ++++++++++++++++++++++++++++++++++++++++++++
+// ========================================================================

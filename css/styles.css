@@ -12,7 +12,7 @@
   --color-keys: #37474f;
   --color-keys-light: #e5e5e5;
   --font-size-large: 60px;
-  --font-size-medium: 20px;
+  --font-size-medium: 25px;
   --transition: all 0.2s ease-in-out;
 }
 
@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-image: url(../images/avengers-infinity-war-minimal-art-2q-1920x1080.jpg);
 }
 
 li,
@@ -45,22 +46,23 @@ h2 {
 }
 
 button {
-  margin: 6px;
+  margin: 7px;
   border: 1px solid transparent;
-  padding: 0.5rem 1rem;
-  color: var(--color-keys);
+  padding: 1rem 2rem;
+  color: white;
   font-size: var(--font-size-medium);
-  background-color: var(--color-keys-light);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
-  transition: 0.4s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 button:hover {
   transform: scale(1.2);
-  box-shadow: 1px 1px 5px black;
+  box-shadow: 1px 1px 5px white;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 1);
 }
 .main-container {
   display: flex;
@@ -75,6 +77,12 @@ button:hover {
   width: 100%;
   padding: 10px;
 }
+.section-2 {
+  width: 60%;
+  padding: 20px 10px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
 
 /* Title */
 
@@ -85,13 +93,13 @@ button:hover {
 /* Phrase */
 
 .letter {
-  font-size: var(--font-size-medium);
-  height: 65px;
-  width: 65px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
+  font-size: var(--font-size-large);
+  height: 85px;
+  width: 85px;
+  padding: 5px;
+  margin-right: 4px;
   color: transparent;
-  background: var(--color-neutral-light);
+  background: var(--color-neutral);
   border-radius: 5px;
 }
 
@@ -101,42 +109,75 @@ button:hover {
 @keyframes swing {
   0% {
     transform: rotate(-30deg);
+    background-color: yellow;
+    opacity: 1;
   }
   20% {
     transform: scale(1.2);
+    opacity: 0.1;
   }
   50% {
     transform: rotate(30deg);
+    opacity: 1;
   }
   80% {
     transform: scale(0.95);
+    opacity: 0.1;
   }
 }
 .show {
   color: #000;
   background-color: #76ce82;
+  border: 1px solid #000;
   animation: swing 1.5s ease-in-out;
+}
+@keyframes win {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.1;
+  }
+}
+.winner {
+  animation: win 1.5s ease-in-out;
 }
 
 /* Keyboard */
+
+#qwerty {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
 
 .keyrow {
   display: flex;
   justify-content: center;
 }
 
-.chosen {
-  background: var(--color-neutral);
+.chosen,
+.wrong {
+  background: var(--color-win);
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #ffffff;
 }
-.chosen:hover {
+.chosen:hover,
+.wrong:hover {
   transform: none;
   cursor: inherit;
   box-shadow: none;
 }
-
+.wrong {
+  background: var(--color-lose);
+}
 .btn__reset {
   padding: 8px;
   margin: 50px auto;
@@ -180,6 +221,7 @@ button:hover {
 
 .win {
   background-color: var(--color-win);
+  transition: all 1.5s ease-in-out;
 }
 
 .win a {
